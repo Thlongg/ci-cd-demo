@@ -20,7 +20,7 @@ jobs:
 
       - name: Deploy to Prod server
         uses: appleboy/ssh-action@v1.0.3
-          with:
+        with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
@@ -29,4 +29,4 @@ jobs:
             docker compose build
             docker compose restart
   
-  needs: [preparation] 
+    needs: [preparation] 
